@@ -11,9 +11,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    @users = User.all
-    @books = @user.books
-    @book = Book.new
+   @users = User.all
   end
   
   def show
@@ -23,6 +21,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    
   end
 
   

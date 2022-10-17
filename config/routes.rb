@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:show, :edit, :new, :index, :create]
-  resources :books, only: [:show, :edit, :new, :index, :create]
+  resources :books, only: [:show, :edit, :new, :index, :create, :destroy]
 
 
  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
