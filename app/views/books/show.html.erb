@@ -13,12 +13,12 @@
             <% @books.each do |book| %>
             <tr>
               <td><%= image_tag book.user.get_profile_image(100,100)%>
-                  <%= book.user.name %>
+                  <%= link_to book.user.name, user_path(book.user.id) %>
               </td>
-              <td><%= link_to book.title, book_path%></td>
+              <td><%= link_to book.title, book_path %></td>
               <td><%= book.body %></td>
-              <td><%=link_to "Edit", edit_book_path, class: 'btn btn-sm btn-success edit_book_40684' %></td>
-              <td><%=link_to "Destroy", book_path, class: 'btn btn-sm btn-danger destroy_book_40684' %></td>
+              <td><%=link_to "Edit", edit_book_path, class: 'btn btn-sm btn-success ' %></td>
+              <td><%=link_to "Destroy", book_path, method: :delete, class: 'btn btn-sm btn-danger', "data-confirm" => "本当に消しますか？" %></td>
             </tr>
             <% end %>
           </tbody>
