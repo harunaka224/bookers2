@@ -23,11 +23,16 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.new
     @books = Book.all
+    @book = Book.new
   end
 
   def edit
+    user_id = params[:id].to_i
+    login_user_id = current_user.id
+    if(user_id != login_user_id)
+      redirect_to book_path
+    end
     @book = Book.find(params[:id])
   end
 
@@ -36,7 +41,7 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       flash[:notice] ="You have updated book successfully."
       redirect_to book_path(@book.id)
-    else 
+    else
       render :edit
     end
   end
