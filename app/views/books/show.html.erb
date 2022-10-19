@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-3">
 
-      <%=render 'index', book: @book, user: @book_user%>
+      <%=render 'index', book: @book_new, user: @book_user%>
 
       </div>
       <div class="col-md-8 offset-md-1">
@@ -18,7 +18,7 @@
               <td><%= @book.body %></td>
               <td>
                 <% if @book.user == current_user %>
-                <%=link_to "Edit", edit_book_path, class: 'btn btn-sm btn-success ' %>
+                <%=link_to "Edit", edit_book_path, class: 'btn btn-sm btn-success' %>
                 <% end %>
               </td>
               <td>

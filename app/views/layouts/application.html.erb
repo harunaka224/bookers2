@@ -29,7 +29,7 @@
             <% if user_signed_in? %>
         　     <li class="nav-item">
                 <i class="fas fa-home" style="color:#fff;" ></i>
-                <%= link_to "Home", root_path, class:"text-light"%>
+                <%= link_to "Home", user_path(current_user.id), class:"text-light"%>
               </li>
               <li class="nav-item">
                 <i class="fas fa-users" style="color:#fff;"></i>
@@ -41,7 +41,7 @@
               </li>
               <li class="nav-item">
                <i class="fas fa-sign-out-alt" style="color:#fff;" ></i>
-                <%= link_to "log out", destroy_user_session_path, method: :delete, class:"text-light"%>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"text-light"%>
               </li>
             <% else %>
             　<li class="nav-item">
