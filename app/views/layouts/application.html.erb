@@ -24,45 +24,46 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto">
-            <% if user_signed_in? %>
-        　     <li class="nav-item">
-                <i class="fas fa-home" style="color:#fff;" ></i>
-                <%= link_to "Home", user_path(current_user.id), class:"text-light"%>
-              </li>
-              <li class="nav-item">
-                <i class="fas fa-users" style="color:#fff;"></i>
-                <%= link_to "Users", users_path, class:"text-light"%>
-              </li>
-              <li class="nav-item">
-                <i class="fas fa-book-open" style="color:#fff;"></i>
-                <%= link_to "Books", books_path, class:"text-light"%>
-              </li>
-              <li class="nav-item">
-               <i class="fas fa-sign-out-alt" style="color:#fff;" ></i>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"text-light"%>
-              </li>
-            <% else %>
-            　<li class="nav-item">
-            　  <i class="fas fa-home" style="color:#fff; "></i>
-               <%= link_to "Home", root_path, class:"text-light" %>
-              </li>
-              <li class="nav-item">
-                 <i class="fas fa-link" style="color:#fff;"></i>
-                <%= link_to "About", about_path, class:"text-light" %>
-              </li>
-              <li class="nav-item">
-                 <i class="fas fa-user-plus" style="color:#fff;"></i>
-                <%= link_to "Sign up", new_user_registration_path, class:"text-light" %>
-              </li>
-              <li class="nav-item">
-                 <i class="fas fa-sign-in-alt" style="color:#fff;"></i>
-                <%= link_to "Log in", new_user_session_path, class:"text-light" %>
-              </li>
-        　　  <% end %>
-          </ul>
-        </div>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              
+              <% if user_signed_in? %>
+          　     <li>
+                  <i class="fas fa-home" style="color:#fff;" ></i>
+                  <%= link_to "Home", user_path(current_user.id), class:"text-light"%>
+                </li>
+                <li class="mx-2">
+                  <i class="fas fa-users" style="color:#fff;"></i>
+                  <%= link_to "Users", users_path, class:"text-light"%>
+                </li>
+                <li class="mx-2">
+                  <i class="fas fa-book-open" style="color:#fff;"></i>
+                  <%= link_to "Books", books_path, class:"text-light"%>
+                </li>
+                <li class="nav-item">
+                 <i class="fas fa-sign-out-alt" style="color:#fff;" ></i>
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"text-light"%>
+                </li>
+              <% else %>
+              　<li>
+              　  <i class="fas fa-home" style="color:#fff; "></i>
+                 <%= link_to "Home", root_path, class:"text-light" %>
+                </li>
+                <li class="mx-2">
+                   <i class="fas fa-link" style="color:#fff;"></i>
+                  <%= link_to "About", about_path, class:"text-light" %>
+                </li>
+                <li class="mx-2">
+                   <i class="fas fa-user-plus" style="color:#fff;"></i>
+                  <%= link_to "Sign up", new_user_registration_path, class:"text-light" %>
+                </li>
+                <li>
+                   <i class="fas fa-sign-in-alt" style="color:#fff;"></i>
+                  <%= link_to "Log in", new_user_session_path, class:"text-light" %>
+                </li>
+          　　  <% end %>
+            </ul>
+          </div>
         </div>
       </nav>
   </header>
