@@ -3,11 +3,11 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-  
+
   def create
   @user = User.new(user_params)
     if @user.save
-      flash[:notice] = 'Welcome! You have signed up successfully.' 
+      flash[:notice] = 'Welcome! You have signed up successfully.'
       redirect_to user_path(@user.id)
     else
       render :new
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     user_id = params[:id].to_i
     login_user_id = current_user.id
     if(user_id != login_user_id)
-      redirect_to user_path
+      redirect_to user_path(current_user)
     end
     @user = User.find(params[:id])
   end
