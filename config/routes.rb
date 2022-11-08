@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:show, :edit, :new, :index, :create, :update] do
-    resources :relationships, only: [:create, :destroy]
+    resource :relationships, only: [:create]
+    delete "relationships" =>'relationships#destroy', as: 'relationship'
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
   end
