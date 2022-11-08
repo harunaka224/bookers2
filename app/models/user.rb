@@ -33,5 +33,16 @@ class User < ApplicationRecord
     end
     profile_image.variant(resize_to_limit: [100, 100]).processed
   end
-
+  
+  def follow(user)
+    relationships.create(followed_id: user.id)
+  end
+  
+  def unfollow(user)
+    relationships.find_by(followed_id: user.id).destroy#特定の条件にマッチした最初のレコードを検索し取得できるデータは1件
+  end
+  
+  def following?(user)
+    followings.include?(user)#関連するテーブルをまとめて取得
+  end
 end
